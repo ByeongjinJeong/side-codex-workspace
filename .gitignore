@@ -1,0 +1,26 @@
+.DS_Store
+Thumbs.db
+*.log
+
+.env
+.env.*
+secrets.*
+*.key
+*.pem
+
+node_modules/
+dist/
+build/
+.cache/
+.tmp/
+tmp/
+
+# Never commit local Codex state into this repo.
+.codex/
+auth.json
+history.jsonl
+sessions/
+cache/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
