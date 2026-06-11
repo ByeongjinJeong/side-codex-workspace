@@ -1,0 +1,3 @@
+display_name: Longjane Blog Drafter
+short_description: Draft Longjane posts from XLSX and photos.
+default_prompt: Draft a Longjane travel blog post from the local briefing workbook and photos.
