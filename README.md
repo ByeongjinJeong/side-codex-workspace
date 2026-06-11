@@ -11,7 +11,8 @@ Windows and macOS:
 
 External tools such as gstack are not vendored into this repo. Keep only the
 install notes here, then reinstall them from their upstream repositories on each
-machine.
+machine. For gstack, keep the upstream checkout outside this repo and let its
+setup script install Codex-visible skill links under `~/.codex/skills`.
 
 Do not put the whole `~/.codex` directory in Git. It contains auth, logs,
 sessions, caches, SQLite state, and machine-specific files.
@@ -43,12 +44,15 @@ Optional continuous sync while working:
 .\scripts\watch-sync.ps1
 ```
 
-Install gstack for Codex:
+Install gstack for Codex. The clone is only the upstream source checkout; the
+`setup --host codex` step installs the Codex skill links into
+`$env:USERPROFILE\.codex\skills`.
 
 ```powershell
 git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git "$env:USERPROFILE\gstack"
 cd "$env:USERPROFILE\gstack"
 .\setup --host codex
+Get-ChildItem "$env:USERPROFILE\.codex\skills" -Name | Where-Object { $_ -like "gstack*" }
 ```
 
 Windows 11 needs Git, Bun, and Node.js on `PATH`.
@@ -80,12 +84,15 @@ Optional continuous sync while working:
 ./scripts/watch-sync.sh
 ```
 
-Install gstack for Codex:
+Install gstack for Codex. The clone is only the upstream source checkout; the
+`setup --host codex` step installs the Codex skill links into
+`~/.codex/skills`.
 
 ```bash
 git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/gstack
 cd ~/gstack
 ./setup --host codex
+find ~/.codex/skills -maxdepth 1 -name 'gstack*' -print
 ```
 
 macOS needs Git and Bun on `PATH`.
