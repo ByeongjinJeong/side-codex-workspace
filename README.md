@@ -9,6 +9,10 @@ Windows and macOS:
 - `projects/`: side-project working notes or shared project scaffolds
 - `scripts/`: install and sync helpers
 
+External tools such as gstack are not vendored into this repo. Keep only the
+install notes here, then reinstall them from their upstream repositories on each
+machine.
+
 Do not put the whole `~/.codex` directory in Git. It contains auth, logs,
 sessions, caches, SQLite state, and machine-specific files.
 
@@ -39,6 +43,16 @@ Optional continuous sync while working:
 .\scripts\watch-sync.ps1
 ```
 
+Install gstack for Codex:
+
+```powershell
+git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git "$env:USERPROFILE\gstack"
+cd "$env:USERPROFILE\gstack"
+.\setup --host codex
+```
+
+Windows 11 needs Git, Bun, and Node.js on `PATH`.
+
 ## macOS setup
 
 Clone the repo:
@@ -65,6 +79,16 @@ Optional continuous sync while working:
 ```bash
 ./scripts/watch-sync.sh
 ```
+
+Install gstack for Codex:
+
+```bash
+git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/gstack
+cd ~/gstack
+./setup --host codex
+```
+
+macOS needs Git and Bun on `PATH`.
 
 ## Adding a new personal skill
 
