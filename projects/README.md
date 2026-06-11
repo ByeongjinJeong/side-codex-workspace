@@ -6,7 +6,8 @@ Project inventory for `~/Desktop/workspace`.
 
 - `longjane_blog_auto`: about 11 GB locally, includes working files and generated/media assets.
 - `longjane_mailz`: about 10 GB locally, includes many product image files.
+  Lightweight working docs are tracked under `projects/longjane_mailz/`.
 
-These projects are not copied into this repo yet because the current local
-folders contain large binary assets. Use Git LFS or a source-only export before
-adding them to GitHub.
+Full local folders are not copied into this repo because they contain large
+binary assets. Use Git LFS or a source-only export before adding media-heavy
+project contents to GitHub.
